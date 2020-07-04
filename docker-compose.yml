@@ -1,0 +1,14 @@
+version: "3.3"
+
+services: 
+  app:
+    build: .
+    image: uriellabs/flaskr
+    container_name: flaskr
+    command: flask run
+    env_file: 
+      - .env
+    ports: 
+      - 5000:5000
+    volumes: 
+      - ./src:/app
